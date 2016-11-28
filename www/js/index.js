@@ -1,5 +1,6 @@
 /*global $, jQuery, alert, console*/
 
+/* OGGETTO APP */
 var app = {
     // Application Constructor
     initialize: function () {
@@ -24,5 +25,9 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+/****************************/
 
-app.initialize();
+$(document).ready(function () {
+    'use strict';
+    app.initialize();
+});
