@@ -2,3 +2,18 @@
 nav {
     background-color: green !important;
 }
+
+#didattica {
+    padding-top: 25px;
+}
+
+.icon_categories {
+    vertical-align: middle !important;
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.collapsible-header > span {
+    margin-left: 1em;
+    text-transform: capitalize;
+}

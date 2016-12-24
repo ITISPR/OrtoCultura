@@ -3,7 +3,10 @@
 <html>
     <head>
         
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' http://web.itis.pr.it:8080 'unsafe-inline' 'unsafe-eval'; ">
+        
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -20,8 +23,8 @@
             <a href="#" class="brand-logo">OrtoCultura</a>
             <a href="#" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="tabs tabs-transparent">
-                    <li class="tab"><a href="#orti">Orti</a></li>
-                    <li class="tab"><a class="active" href="#didattica">Didattica</a></li>
+                    <li class="tab"><a class="active" href="#orti">Orti</a></li>
+                    <li id="id_li_didattica" class="tab"><a href="#didattica">Didattica</a></li>
                     <li class="tab"><a href="#storia">Storia</a></li>
                 </ul>
             </div>
@@ -29,12 +32,12 @@
         <!-- DIVERSE SCHERMATE DEL MENU -->
         <div id="orti" class="col s12">Orti</div>
         <div id="didattica" class="col s12"> 
-		<br />
+		<!--<br />
         <ul class="collapsible" data-collapsible="accordion">
 			<li>
               <div class="collapsible-header">
-                <img src="img/carota_icon.png" width="25px" height="25px"  style="vertical-align: middle;">
-                <span style="margin-left: 1em;"><b>Carota</b></span>
+                <img src="img/carote.png" class="icon_categories">
+                <span><b>Carota</b></span>
               </div>
 			  <div class="collapsible-body">
                 <div class="collapsible-header">Carota 1</div>
@@ -45,8 +48,8 @@
 			</li>
 			<li>
               <div class="collapsible-header">
-                <img src="img/tomato_icon.png" width="25px" height="25px"  style="vertical-align: middle;">
-                <span style="margin-left: 1em;"><b>Pomodoro</b></span>
+                <img src="img/pomodori.png" class="icon_categories">
+                <span><b>Pomodoro</b></span>
               </div>
 			  <div class="collapsible-body">
                 <div class="collapsible-header">Pomodoro 1</div>
@@ -55,8 +58,8 @@
 			</li>
 			<li>
               <div class="collapsible-header">
-                <img src="img/eggplant_icon.png" width="25px" height="25px"  style="vertical-align: middle;">
-                <span style="margin-left: 1em;"><b>Melanzana</b></span>
+                <img src="img/melanzane.png" class="icon_categories">
+                <span><b>Melanzana</b></span>
               </div>
 			  <div class="collapsible-body">
                 <div class="collapsible-header">Melanzana 1</div>
@@ -64,7 +67,7 @@
                 <div class="collapsible-header">Melanzana 3</div>
               </div>
 			</li>
-		</ul>
+		</ul>-->
 		</div>
         <div id="storia" class="col s12">Storia</div>
         
