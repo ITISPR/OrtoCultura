@@ -17,3 +17,23 @@ nav {
     margin-left: 1em;
     text-transform: capitalize;
 }
+
+.titoloOrtaggio {
+    text-align: center;
+    color: green;
+}
+
+.circularImage {
+	width: 175px;
+	height: 175px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(http://link-to-your/image.jpg) no-repeat;
+    margin: auto;
+    display: block;
+}
+
+.bloccoInformazioni > b {
+    color: green;
+}
