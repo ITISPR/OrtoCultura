@@ -1,4 +1,17 @@
 
 nav {
-    background-color: green !important;
+    background-color: #008744 !important;
+}
+
+.tab {
+    width: 33.3%;
+}
+
+#didattica {
+    padding-top: 25px;
+}
+
+
+#orti {
+    padding-top: 25px;
 }

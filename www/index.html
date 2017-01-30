@@ -3,13 +3,17 @@
 <html>
     <head>
         
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' http://web.itis.pr.it:8080 'unsafe-inline' 'unsafe-eval'; ">
+        
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/icon.css">
+        <link rel="stylesheet" type="text/css" href="css/flickity.css">
         <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script src="js/flickity.pkgd.min.js"></script>
         <title>OrtoCultura</title>
         
     </head>
@@ -17,19 +21,35 @@
         
         <nav class="nav-extended">
             <div class="nav-wrapper">
-            <a href="#" class="brand-logo">OrtoCultura</a>
-            <a href="#" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo"><img src="img/logoWhite.png" width="56" height="56"></a>
+            <a href="#" class="button-collapse"></a>
                 <ul class="tabs tabs-transparent">
-                    <li class="tab"><a href="#orti">Orti</a></li>
-                    <li class="tab"><a class="active" href="#didattica">Didattica</a></li>
+                    <li class="tab"><a class="active" href="#orti">Orti</a></li>
+                    <li id="id_li_didattica" class="tab"><a href="#didattica">Didattica</a></li>
                     <li class="tab"><a href="#storia">Storia</a></li>
                 </ul>
             </div>
         </nav>
         <!-- DIVERSE SCHERMATE DEL MENU -->
-        <div id="orti" class="col s12">Orti</div>
-        <div id="didattica" class="col s12">Didattica</div>
-        <div id="storia" class="col s12">Storia</div>
+        <div id="orti" class="col s12">
+            <!-- Flickity HTML init -->
+            <div class="carousel js-flickity">
+              <!-- images from unsplash.com -->
+              <div class="carousel-cell">
+                <img src="img/logoAB.png" alt="orange tree" />
+              </div>
+              <div class="carousel-cell">
+                <img src="img/logoML.png" alt="submerged" />
+              </div>
+              <div class="carousel-cell">
+                <img src="img/logoBC.png" alt="look-out" />
+              </div>
+            </div>
+
+        </div>
+        <div id="didattica" class="col s12"></div>
+        <div id="storia" class="col s12"></div>
+        
         
         
         <!-- SCRIPT JS -->
