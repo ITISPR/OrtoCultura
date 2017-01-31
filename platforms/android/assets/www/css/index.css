@@ -1,4 +1,50 @@
-
 nav {
-    background-color: green !important;
+    background-color: #008744 !important;
+}
+
+.tab {
+    width: 33.3%;
+}
+
+#didattica {
+    padding-top: 25px;
+}
+
+#storia {
+    padding: 30px;
+}
+
+#orti {
+    padding-top: 25px;
+}
+
+.titoloLogin {
+    color: #008744;
+    text-align: center;
+}
+
+#lblInput.active {
+    color: #008744; !important
+}
+
+#inInput {
+    border-bottom: 1px solid #008744; !important
+    box-shadow: 0 1px 0 0 #008744; !important
+}
+
+.btnLogin {
+    background-color: #008744; !important
+    color: white; !important
+    width: 35%; !important
+}
+
+.btnLogin:hover {
+    background-color: #008744; !important
+    color: white; !important
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
 }
