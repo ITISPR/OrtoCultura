@@ -42,11 +42,14 @@ function getCategories() {
 }
 
 function getSingleVegetable() {
-    //'use strict';
-    //var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
-    //$.getJSON(url, 'service=getCategories', function (resp) {
+        'use strict';
+        //var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
+        //$.getJSON(url, 'service=getCategories', function (resp) {
+        $("#menu").empty();
         $("#didattica").empty();
+        var strMenu = '<nav class="nav-extended"><div class="nav-wrapper" style="height: 65px;"><a href="#" class="brand-logo"><img src="img/logoWhite.png" width="56" height="56"></a><a href="" class="button-collapse"><img src="img/ic_arrow_back_white.png" style="margin-top: 45%;"></a><ul class="tabs tabs-transparent"><li class="tab"><a class="active" href="#orti"><b></b></a></li></ul></div></nav>'
         var strVegetable = '<h4 class="titoloOrtaggio">Pomodoro di Pachino</h4><br /><img class="circularImage" src="img/Pomodoro_Di_Pachino.png"><br /><br /><div class="container bloccoInformazioni"><b style="margin-right:20px;">Descrizione</b>Prodotto ortofrutticolo italiano a indicazione geografica protetta proveniente da parte delle provincie di Siracusa e Ragusa.<hr /><b style="margin-right:20px;">Luogo di Origine</b>Sicilia, Italia<hr /><b style="margin-right:20px;">Riconoscimento</b>I.G.P.</div>'
+        $("#menu").append(strMenu);
         $("#didattica").append(strVegetable);
         $('.collapsible').collapsible(); //initialize Materialize-css component
     //});
