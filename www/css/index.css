@@ -35,12 +35,42 @@ nav {
 .btnLogin {
     background-color: #008744; !important
     color: white; !important
-    width: 35%; !important
+    width: 205px; !important
 }
 
 .btnLogin:hover {
     background-color: #008744; !important
     color: white; !important
+}
+
+.btnGuest {
+    background-color: white; !important
+    color: black; !important
+    border-color: #008744; !important
+}
+
+.btnGuest:hover {
+    background-color: white; !important
+    color: black; !important
+    border-color: #008744; !important
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: /*whatever width you want*/;
 }
 
 .center {
