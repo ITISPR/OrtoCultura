@@ -1,4 +1,36 @@
-
 nav {
-    background-color: green !important;
+    background-color: #008744 !important;
+}
+
+.tab {
+    width: 33.3%;
+}
+
+#storia {
+    border-top: 50px;
+}
+
+.titoloStoria {
+    color: #008744;
+    font-size: 150%;
+}
+
+.sottoTitoloStoria {
+    color: #008744;
+    font-size: 120%;
+}
+
+.imageStoria {
+	width: 150px;
+	height: 150px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(http://link-to-your/image.jpg) no-repeat;
+    margin: auto;
+    display: block;
+}
+
+.hrStoria {
+    border-color: #008744;
 }
