@@ -7,7 +7,7 @@ nav {
 }
 
 #storia {
-    border-top: 50px;
+    padding-top: 25px;
 }
 
 .titoloStoria {
@@ -33,4 +33,26 @@ nav {
 
 .hrStoria {
     border-color: #008744;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+a:link {
+    color: #008744;
+}
+
+a:visited {
+    color: #008744;
+}
+
+a:hover {
+    color: #008744;
+}
+
+a:active {
+    color: #008744;
 }
