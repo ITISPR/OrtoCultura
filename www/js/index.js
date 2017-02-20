@@ -19,12 +19,47 @@ var app = {
     }
 };
 
-function getCategories() {
+function getFamilies() {
     'use strict'; //il codice JS deve essere eseguito in modalità strict 
+    var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
+    $.getJSON(url, 'service=getFamilies', function (resp) {
+        $("#didattica").empty();
+        var strCategories = '<ul class="collapsible" data-collapsible="accordion">';
+        
+        $.each(resp, function (keyFamiglia, famiglia) {
+            var i;
+            strCategories += '<li><div onclick="getCategories(this)" class="collapsible-header families"><span>' + famiglia.nome + '</span></div><div class="collapsible-body"></div></li>';
+        });
+        
+        $("#didattica").append(strCategories);
+        $('.collapsible').collapsible();
+    });
+}
+
+function getCategories(divClicked) {
+    'use strict';
+    var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
+    
+    $.getJSON(url, 'service=getCategories&famiglia=' + $(divClicked).parent().find(".collapsible-header span").html(), function (resp) {
+        var strCategories = '<ul class="collapsible" data-collapsible="accordion">';
+
+        $.each(resp, function (keyCategoria, categoria) {
+            var i;
+            strCategories += '<li><div class="collapsible-header categories"><img src="' + categoria.img 'class="icon_categories/><span>' + categoria.nome + '</span></div><div class="collapsible-body"></div</li>';
+        }); 
+
+        $(divClicked).parent().find(".collapsible-body").html(strCategories);
+        $('.collapsible').collapsible();
+    });
+    
+    
+}
+
+/*function getCategories(famiglia) {
+    'use strict';
     var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
     
     $.getJSON(url, 'service=getCategories', function (resp) {
-        $("#didattica").empty();
         var strCategories = '<ul class="collapsible" data-collapsible="accordion">';
         
         $.each(resp, function (categoria, elements) {
@@ -39,8 +74,9 @@ function getCategories() {
         $("#didattica").append(strCategories);
         $('.collapsible').collapsible(); //initialize Materialize-css component
     });
-}
+}*/
 
+/*
 function getSingleVegetable() {
         'use strict';
         //var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
@@ -54,7 +90,7 @@ function getSingleVegetable() {
         $('.collapsible').collapsible(); //initialize Materialize-css component
     //});
 }
-
+*/
 $(document).ready(function () {
     'use strict';
     app.initialize();
@@ -63,7 +99,8 @@ $(document).ready(function () {
     
     $("#id_li_didattica").click(function () {
         if (!isCalled) {
-            getCategories();
+            getFamilies();
         }
     });
+
 });

@@ -41,3 +41,12 @@ nav {
 .bloccoInformazioni > b {
     color: green;
 }
+
+.families {
+    font-weight: bold;
+}
+
+.categories {
+    font-weight: normal; 
+    padding-left: 30px; 
+}
