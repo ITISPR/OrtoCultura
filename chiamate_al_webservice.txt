@@ -1,0 +1,5 @@
+http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?service=getCategories
+
+http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?service=getSingleVegetable&categoria=carote&id=1
+
+-implementare il mono-richiamo al webservice
