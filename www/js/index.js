@@ -32,7 +32,7 @@ function getFamilies() {
         });
         
         $("#didattica").append(strCategories);
-        $('.collapsible').collapsible();
+        $('.collapsible').collapsible(); 
     });
 }
 
@@ -45,7 +45,7 @@ function getCategories(divClicked) {
 
         $.each(resp, function (keyCategoria, categoria) {
             var i;
-            strCategories += '<li><div class="collapsible-header categories"><img src="' + categoria.img 'class="icon_categories/><span>' + categoria.nome + '</span></div><div class="collapsible-body"></div</li>';
+            strCategories += '<li><div class="collapsible-header categories"><img src="' + categoria.img + '" class="icon_categories"><span>' + categoria.nome + '</span></div><div class="collapsible-body"></div></li>';
         }); 
 
         $(divClicked).parent().find(".collapsible-body").html(strCategories);
