@@ -148,7 +148,7 @@ nav {
 }
 
 .collection-item {
-	color: #008744 !important;
+	color: #000 !important;
 	font-size: 18px !important;
 }
 
@@ -156,6 +156,12 @@ nav {
 	position: fixed !important;
 	right: 0 !important;
 	bottom: 0 !important;
-	margin: 10px;
+	margin: 15px;
 	background-color: #008744 !important;
+}
+
+.btnIndietro {
+	width: 30px;
+	height: 30px;
+    margin-left: 15px;
 }

@@ -78,7 +78,7 @@ function singoloOrtoAdmin() {
         //var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
         //$.getJSON(url, 'service=getCategories', function (resp) {
         $("#orti").empty();
-        var strOrto = '<a href="#" class="sezioneModifica">Modifica</a><br><h4 class="titoloOrto">Orto Scolastico</h4><br /><img class="circularImage" src="img/orto.png"><br /><br /><div class="container bloccoInformazioni"><img src="img/ic_comment_green.png" class="icon_orti" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat molestie enim. Nam et felis id justo vehicula iaculis.<br/><br/><img src="img/ic_today_green.png" class="icon_orti" />Sabato 2 Aprile 2017<br/><br/><img src="img/ic_room_green.png" class="icon_orti" />Via Toscana 10, Parma</div><br/><br/><div style="text-align: center;"><img class="partImg" src="img/ic_view_module_red.png" onclick="particelleAdmin()" /><span class="partSpan">Vedi Particelle</span></div><br/><br/>'
+        var strOrto = '<div><img src="img/ic_arrow_back_green.png" class="btnIndietro" onclick="loginSchool()"><a href="#" class="sezioneModifica">Modifica</a></div><br><h4 class="titoloOrto">Orto Scolastico</h4><br /><img class="circularImage" src="img/orto.png"><br /><br /><div class="container bloccoInformazioni"><img src="img/ic_comment_green.png" class="icon_orti" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat molestie enim. Nam et felis id justo vehicula iaculis.<br/><br/><img src="img/ic_today_green.png" class="icon_orti" />Sabato 1 Aprile 2017<br/><br/><img src="img/ic_room_green.png" class="icon_orti" />Via Toscana 10, Parma</div><br/><br/><div style="text-align: center;"><img class="partImg" src="img/ic_view_module_red.png" onclick="particelleAdmin()" /><span class="partSpan">Vedi Particelle</span></div><br/><br/>'
         $("#orti").append(strOrto);
         $('.collapsible').collapsible(); //initialize Materialize-css component
     //});
@@ -87,8 +87,16 @@ function singoloOrtoAdmin() {
 function particelleAdmin() {
 		'use strict';
 		$("#orti").empty();
-		var strParticelle = '<h4 class="titoloOrto">Particelle</h4><br><br><div class="collection"><a href="#" class="collection-item">Particella #1</a><a href="#" class="collection-item">Particella #2</a><a href="#" class="collection-item">Particella #3</a><a href="#" class="collection-item">Particella #4</a></div><a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>'
+		var strParticelle = '<img src="img/ic_arrow_back_green.png" class="btnIndietro" onclick="singoloOrtoAdmin()"><br><h4 class="titoloOrto">Particelle</h4><br><br><div class="collection"><a href="#" onclick="particellaSingolaAdmin()" class="collection-item">Particella #1</a><a href="#" class="collection-item">Particella #2</a><a href="#" class="collection-item">Particella #3</a><a href="#" class="collection-item">Particella #4</a></div><a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>'
 		$("#orti").append(strParticelle);
+		$('.collapsible').collapsible();
+}
+
+function particellaSingolaAdmin() {
+		'use strict'
+		$("#orti").empty();
+		var strParticella = '<img src="img/ic_arrow_back_green.png" class="btnIndietro" onclick="particelleAdmin()"><a href="#" class="sezioneModifica">Modifica</a><br><h4 class="titoloOrto">Particella #1</h4><br /><img class="circularImage" src="img/particella_carote.jpg"><br /><br /><div class="container bloccoInformazioni"><img src="img/ic_comment_green.png" class="icon_orti" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat molestie enim. Nam et felis id justo vehicula iaculis.<br/><br/><img src="img/ic_carrot_green.png" class="icon_orti" />Carota (Apiaceae)<br/><br/><img src="img/ic_today_green.png" class="icon_orti" />Domenica 2 Aprile 2017</div><br/><br/>'
+		$("#orti").append(strParticella);
 		$('.collapsible').collapsible();
 }
 
