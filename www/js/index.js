@@ -78,10 +78,18 @@ function singoloOrtoAdmin() {
         //var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
         //$.getJSON(url, 'service=getCategories', function (resp) {
         $("#orti").empty();
-        var strVegetable = '<a href="#" class="sezioneModifica">Modifica</a><br><h4 class="titoloOrto">Orto Scolastico</h4><br /><img class="circularImage" src="img/orto.png"><br /><br /><div class="container bloccoInformazioni"><img src="img/ic_comment_green.png" class="icon_orti" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat molestie enim. Nam et felis id justo vehicula iaculis.<br/><br/><img src="img/ic_today_green.png" class="icon_orti" />Sabato 2 Aprile 2017<br/><br/><img src="img/ic_room_green.png" class="icon_orti" />Via Toscana 10, Parma</div><br/><br/><div style="text-align: center;"><img class="partImg" src="img/ic_view_module_red.png"><span class="partSpan">Vedi Particelle</span></div><br/><br/>'
-        $("#orti").append(strVegetable);
+        var strOrto = '<a href="#" class="sezioneModifica">Modifica</a><br><h4 class="titoloOrto">Orto Scolastico</h4><br /><img class="circularImage" src="img/orto.png"><br /><br /><div class="container bloccoInformazioni"><img src="img/ic_comment_green.png" class="icon_orti" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat molestie enim. Nam et felis id justo vehicula iaculis.<br/><br/><img src="img/ic_today_green.png" class="icon_orti" />Sabato 2 Aprile 2017<br/><br/><img src="img/ic_room_green.png" class="icon_orti" />Via Toscana 10, Parma</div><br/><br/><div style="text-align: center;"><img class="partImg" src="img/ic_view_module_red.png" onclick="particelleAdmin()" /><span class="partSpan">Vedi Particelle</span></div><br/><br/>'
+        $("#orti").append(strOrto);
         $('.collapsible').collapsible(); //initialize Materialize-css component
     //});
+}
+
+function particelleAdmin() {
+		'use strict';
+		$("#orti").empty();
+		var strParticelle = '<h4 class="titoloOrto">Particelle</h4><br><br><div class="collection"><a href="#" class="collection-item">Particella #1</a><a href="#" class="collection-item">Particella #2</a><a href="#" class="collection-item">Particella #3</a><a href="#" class="collection-item">Particella #4</a></div><a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>'
+		$("#orti").append(strParticelle);
+		$('.collapsible').collapsible();
 }
 
 /*function getCategories(famiglia) {

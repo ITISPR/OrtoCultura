@@ -10,8 +10,8 @@ nav {
     padding-top: 25px;
 }
 
-#storia {
-    padding: 30px;
+#storia { 
+	padding-top: 25px;
 }
 
 #orti {
@@ -145,4 +145,17 @@ nav {
     text-decoration: underline;
     float: right;
     margin-right: 15px;
+}
+
+.collection-item {
+	color: #008744 !important;
+	font-size: 18px !important;
+}
+
+.btn-floating {
+	position: fixed !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	margin: 10px;
+	background-color: #008744 !important;
 }
