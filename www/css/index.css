@@ -79,11 +79,31 @@ nav {
     padding: 10px;
 }
 
-/*didattica*/
 .icon_categories {
     vertical-align: middle !important;
     height: 25px !important;
     width: 25px !important;
+}
+
+/*orto singolo*/
+
+.icon_orti {
+    vertical-align: middle !important;
+    height: 25px !important;
+    width: 25px !important;
+    margin-right: 10px !important;
+}
+
+.partSpan {
+    color: #932700;
+    font-size: 16px;
+}
+
+.partImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
 }
 
 .collapsible-header > span {
@@ -91,9 +111,9 @@ nav {
     text-transform: capitalize;
 }
 
-.titoloOrtaggio {
+.titoloOrto {
     text-align: center;
-    color: green;
+    color: #008744;
 }
 
 .circularImage {
@@ -108,7 +128,7 @@ nav {
 }
 
 .bloccoInformazioni > b {
-    color: green;
+    color: #008744;
 }
 
 .families {
@@ -118,4 +138,11 @@ nav {
 .categories {
     font-weight: normal; 
     padding-left: 30px; 
+}
+
+.sezioneModifica {
+    color: dimgrey;
+    text-decoration: underline;
+    float: right;
+    margin-right: 15px;
 }

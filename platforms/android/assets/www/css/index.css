@@ -55,11 +55,6 @@ nav {
     border-color: #008744; !important
 }
 
-.carousel js-flickity {
-    height: 100%; !important
-    vertical-align: middle; !important
-}
-
 .outer {
     display: table;
     position: absolute;
@@ -82,4 +77,72 @@ nav {
     margin: auto;
     width: 60%;
     padding: 10px;
+}
+
+.icon_categories {
+    vertical-align: middle !important;
+    height: 25px !important;
+    width: 25px !important;
+}
+
+/*orto singolo*/
+
+.icon_orti {
+    vertical-align: middle !important;
+    height: 25px !important;
+    width: 25px !important;
+    margin-right: 10px !important;
+}
+
+.partSpan {
+    color: #932700;
+    font-size: 16px;
+}
+
+.partImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+.collapsible-header > span {
+    margin-left: 1em;
+    text-transform: capitalize;
+}
+
+.titoloOrto {
+    text-align: center;
+    color: #008744;
+}
+
+.circularImage {
+	width: 175px;
+	height: 175px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	background: url(http://link-to-your/image.jpg) no-repeat;
+    margin: auto;
+    display: block;
+}
+
+.bloccoInformazioni > b {
+    color: #008744;
+}
+
+.families {
+    font-weight: bold;
+}
+
+.categories {
+    font-weight: normal; 
+    padding-left: 30px; 
+}
+
+.sezioneModifica {
+    color: dimgrey;
+    text-decoration: underline;
+    float: right;
+    margin-right: 15px;
 }
