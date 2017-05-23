@@ -1,43 +1,39 @@
+/*
+Modifiche alla libreria Materialize.css
+*/
 
-nav {
+.tab {
+    width: 33.3% !important;
+}
+
+.indicator {
+    display: none !important;
+}
+
+/*
+Altro css
+*/
+
+.bottom-nav {
+    bottom: 0 !important;
+    position: fixed !important;
     background-color: #008744 !important;
 }
 
-.tab {
-    width: 33.3%;
+.top-nav {
+    height: 56px !important;
+    background-color: #008744 !important;
 }
 
-#didattica {
-    padding-top: 25px;
+.nav-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 9px;
 }
 
-.icon_categories {
-    vertical-align: middle !important;
-    height: 25px !important;
-    width: 25px !important;
-}
-
-.collapsible-header > span {
-    margin-left: 1em;
-    text-transform: capitalize;
-}
-
-.titoloOrtaggio {
-    text-align: center;
-    color: green;
-}
-
-.circularImage {
-	width: 175px;
-	height: 175px;
-	border-radius: 150px;
-	-webkit-border-radius: 150px;
-	-moz-border-radius: 150px;
-	background: url(http://link-to-your/image.jpg) no-repeat;
+.nav-logo {
     margin: auto;
     display: block;
-}
-
-.bloccoInformazioni > b {
-    color: green;
+    height: 50px;
+    width: 50px;
 }

@@ -31,3 +31,15 @@ $(document).ready(function () {
     'use strict';
     app.initialize();
 });
+
+$('ul.tabs.tabs-transparent li.tab').on('click', function(){ 
+
+    var srcImg = $(this).parent().find(".active img").attr("src");
+    srcImg = srcImg.replace("white", "dark");
+    $(this).parent().find(".active img").attr("src", srcImg);
+    
+    srcImg = $(this).find("img").attr("src");
+    srcImg = srcImg.replace("dark", "white");
+    $(this).find("img").attr("src", srcImg);
+    
+});
