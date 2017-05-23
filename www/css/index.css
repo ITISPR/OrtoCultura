@@ -22,7 +22,16 @@ Altro css
 
 .top-nav {
     height: 56px !important;
+    background-color: #008744 !important;   
+    box-shadow: none !important;
+}
+
+.under-nav {
+    height: 30px !important;
     background-color: #008744 !important;
+    line-height: 20px !important;
+    text-align: center !important;
+    box-shadow: none !important;
 }
 
 .nav-icon {
@@ -36,4 +45,9 @@ Altro css
     display: block;
     height: 50px;
     width: 50px;
+}
+
+#lblNav {
+    color: white;
+    font-size: 18px;
 }

@@ -34,6 +34,7 @@ $(document).ready(function () {
 
 $('ul.tabs.tabs-transparent li.tab').on('click', function(){ 
 
+    var activeName = $(this).attr("data-name");
     var srcImg = $(this).parent().find(".active img").attr("src");
     srcImg = srcImg.replace("white", "dark");
     $(this).parent().find(".active img").attr("src", srcImg);
@@ -41,5 +42,6 @@ $('ul.tabs.tabs-transparent li.tab').on('click', function(){
     srcImg = $(this).find("img").attr("src");
     srcImg = srcImg.replace("dark", "white");
     $(this).find("img").attr("src", srcImg);
+    $("#lblNav").html(activeName);
     
 });
