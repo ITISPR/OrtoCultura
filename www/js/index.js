@@ -25,11 +25,21 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-/****************************/
 
 $(document).ready(function () {
     'use strict';
     app.initialize();
+	$.ajax({ 
+		$("#tabOrti").load("orti.html #orti", function() {
+			$.getScript("js/orti.js");
+		});
+		$("#tabDidattica").load("didattica.html #didattica", function () {
+			$.getScript("js/didattica.js");
+		});
+		$("#tabStoria").load("storia.html #storia", function () {
+			$.getScript("js/storia.js");
+		});
+    });
 });
 
 $('ul.tabs.tabs-transparent li.tab').on('click', function(){ 
