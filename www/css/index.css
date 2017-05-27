@@ -1,167 +1,52 @@
-nav {
+/*
+Modifiche alla libreria Materialize.css
+*/
+
+.tab {
+    width: 33.3% !important;
+}
+
+.indicator {
+    display: none !important;
+}
+
+/*
+Altro css
+*/
+
+.bottom-nav {
+    bottom: 0 !important;
+    position: fixed !important;
     background-color: #008744 !important;
 }
 
-.tab {
-    width: 33.3%;
+.top-nav {
+    background-color: #008744 !important;   
+    box-shadow: none !important;
 }
 
-#didattica {
-    padding-top: 25px;
+.under-nav {
+    height: 30px !important;
+    background-color: #008744 !important;
+    line-height: 20px !important;
+    text-align: center !important;
+    box-shadow: none !important;
 }
 
-#storia { 
-	padding-top: 25px;
+.nav-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 9px;
 }
 
-#orti {
-    padding-top: 25px;
-}
-
-.titoloLogin {
-    color: #008744;
-    text-align: center;
-}
-
-#lblInput.active {
-    color: #008744; !important
-}
-
-#inInput {
-    border-bottom: 1px solid #008744; !important
-    box-shadow: 0 1px 0 0 #008744; !important
-}
-
-.btnLogin {
-    background-color: #008744; !important
-    color: white; !important
-    width: 205px; !important
-}
-
-.btnLogin:hover {
-    background-color: #008744; !important
-    color: white; !important
-}
-
-.btnGuest {
-    background-color: white; !important
-    color: black; !important
-    border-color: #008744; !important
-}
-
-.btnGuest:hover {
-    background-color: white; !important
-    color: black; !important
-    border-color: #008744; !important
-}
-
-.outer {
-    display: table;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.middle {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.inner {
-    margin-left: auto;
-    margin-right: auto; 
-    width: /*whatever width you want*/;
-}
-
-.center {
-    margin: auto;
-    width: 60%;
-    padding: 10px;
-}
-
-.icon_categories {
-    vertical-align: middle !important;
-    height: 25px !important;
-    width: 25px !important;
-}
-
-/*orto singolo*/
-
-.icon_orti {
-    vertical-align: middle !important;
-    height: 25px !important;
-    width: 25px !important;
-    margin-right: 10px !important;
-}
-
-.partSpan {
-    color: #932700;
-    font-size: 16px;
-}
-
-.partImg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: middle;
-}
-
-.collapsible-header > span {
-    margin-left: 1em;
-    text-transform: capitalize;
-}
-
-.titoloOrto {
-    text-align: center;
-    color: #008744;
-}
-
-.circularImage {
-	width: 175px;
-	height: 175px;
-	border-radius: 150px;
-	-webkit-border-radius: 150px;
-	-moz-border-radius: 150px;
-	background: url(http://link-to-your/image.jpg) no-repeat;
+.nav-logo {
     margin: auto;
     display: block;
+    height: 50px;
+    width: 50px;
 }
 
-.bloccoInformazioni > b {
-    color: #008744;
-}
-
-.families {
-    font-weight: bold;
-}
-
-.categories {
-    font-weight: normal; 
-    padding-left: 30px; 
-}
-
-.sezioneModifica {
-    color: dimgrey;
-    text-decoration: underline;
-    float: right;
-    margin-right: 15px;
-}
-
-.collection-item {
-	color: #000 !important;
-	font-size: 18px !important;
-}
-
-.btn-floating {
-	position: fixed !important;
-	right: 0 !important;
-	bottom: 0 !important;
-	margin: 15px;
-	background-color: #008744 !important;
-}
-
-.btnIndietro {
-	width: 30px;
-	height: 30px;
-    margin-left: 15px;
+#lblNav {
+    color: white;
+    font-size: 18px;
 }
