@@ -42,6 +42,19 @@ var app = {
     });
 });*/
 
+$(document).ready(function(){
+    $('.carousel').carousel();
+});
+
+$("#Maria_Luigia").click(function(){
+    $('ul.tabs.tabs-transparent').attr('style', 'display: none !important');
+    $('nav.nav-extended.under-nav').attr('style', 'display: none !important');
+    
+    $("#tabOrti").load("login.html #sezione_login", function () {
+        $.getScript("js/login.js");
+    });
+});
+
 $('ul.tabs.tabs-transparent li.tab').on('click', function(){ 
 
     var activeName = $(this).attr("data-name");

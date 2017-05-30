@@ -10,9 +10,54 @@ Modifiche alla libreria Materialize.css
     display: none !important;
 }
 
+.carousel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.active {
+	color: #008744 !important;
+	font-size: 14px !important;
+}
+
+input:focus {
+	border-bottom: 1px solid #008744 !important;
+	box-shadow: 0px 0px 0px #008744 !important;
+}
+
+input.valid {
+    border-bottom: 1px solid #008744 !important;
+    box-shadow: 0 1px 0 0 #008744 !important;
+}
+
+input.invalid {
+    border-bottom: 1px solid #008744 !important;
+    box-shadow: 0 1px 0 0 #008744 !important;
+}
+
+.waves-effect.waves-light.btn {
+    background-color: #F7F7F7 !important;
+    background-size: cover !important;                    
+    background-repeat: no-repeat !important;
+    background-position: center center !important; 
+	margin: auto !important;
+    display: table !important;
+    color: #008744 !important;
+}
+
+input:disabled {
+    color: white !important;
+	border-bottom: 1px solid #008744 !important;
+	box-shadow: 0px 0px 0px #008744 !important;
+}
+
+
 /*
-Altro css
+Index
 */
+
 
 .bottom-nav {
     bottom: 0 !important;
@@ -46,7 +91,36 @@ Altro css
     width: 50px;
 }
 
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #lblNav {
     color: white;
     font-size: 18px;
+}
+
+#sezioneOrti {
+    width: 100%;
+    height: 200px;
+}
+
+
+/*
+Login
+*/
+
+
+#sezione_login {
+    margin: 30px;
+}
+
+.imgScuola {
+    widows: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
 }
