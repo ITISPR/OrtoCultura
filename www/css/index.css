@@ -53,6 +53,14 @@ input:disabled {
 	box-shadow: 0px 0px 0px #008744 !important;
 }
 
+h5 {
+    color: #008744;
+    text-align: center;
+}
+
+b {
+    color: #008744;
+}
 
 /*
 Index
@@ -68,10 +76,11 @@ Index
 .top-nav {
     background-color: #008744 !important;   
     box-shadow: none !important;
+    display: block;
+    height: 56px !important;
 }
 
 .under-nav {
-    height: 30px !important;
     background-color: #008744 !important;
     line-height: 20px !important;
     text-align: center !important;
@@ -89,6 +98,14 @@ Index
     display: block;
     height: 50px;
     width: 50px;
+}
+
+.nav-button {
+    display: none;
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
 }
 
 .centered {
@@ -119,8 +136,26 @@ Login
 }
 
 .imgScuola {
-    widows: 150px;
+    width: 150px;
     height: 150px;
     display: block;
     margin: auto;
+}
+
+
+/*
+Orto
+*/
+
+
+.imgOrto {
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+}
+
+#sezione_orto {
+    margin: 30px;
 }

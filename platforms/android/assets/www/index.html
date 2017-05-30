@@ -3,7 +3,9 @@
 <html>
     <head>
         
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' http://web.itis.pr.it:8080 'unsafe-inline' 'unsafe-eval'; ">
+        
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -15,22 +17,44 @@
     </head>
     <body>
         
-        <nav class="nav-extended">
+        <nav class="nav-extended top-nav">
             <div class="nav-wrapper">
-            <a href="#" class="brand-logo">OrtoCultura</a>
-            <a href="#" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="tabs tabs-transparent">
-                    <li class="tab"><a href="#orti">Orti</a></li>
-                    <li class="tab"><a class="active" href="#didattica">Didattica</a></li>
-                    <li class="tab"><a href="#storia">Storia</a></li>
-                </ul>
+                <a href="#" class="brand-logo">
+                    <img src="img/logoWhite.png" class="nav-logo" id="imgLogo">
+                </a>
+                <a href="" class="button-collapse">
+                    <img src="img/ic_arrow_back_white.png" class="nav-button" id="imgCollapse">
+                </a>
             </div>
         </nav>
-        <!-- DIVERSE SCHERMATE DEL MENU -->
-        <div id="orti" class="col s12">Orti</div>
-        <div id="didattica" class="col s12">Didattica</div>
-        <div id="storia" class="col s12">Storia</div>
         
+        <nav class="nav-extended under-nav">
+            <label id="lblNav">Orti</label>
+        </nav>
+        
+        <nav class="nav-extended bottom-nav">
+            <ul class="tabs tabs-transparent">
+                <li class="tab" data-name="Orti"><a class="active" href="#tabOrti"><img src="img/icon_orto_white.png" class="nav-icon" id="imgOrti"></a></li>
+                <li class="tab" data-name="Didattica"><a href="#tabDidattica"><img src="img/icon_didattica_dark.png" class="nav-icon" id="imgDidattica"></a></li>
+                <li class="tab" data-name="Storia"><a href="#tabStoria" data-name="Storia"><img src="img/icon_storia_dark.png" class="nav-icon" id="imgStoria"></a></li>
+            </ul>
+        </nav>
+        
+        
+        <section id="id_section_index">
+            
+			<!-- DIVERSE SCHERMATE DEL MENU -->
+			<div id="tabOrti" class="col s12">
+                <div class="carousel">
+                    <a class="carousel-item" id="Bertolucci"><img src="img/logoAB.png"></a>
+                    <a class="carousel-item" id="Maria_Luigia"><img src="img/logoML.png"></a>
+                    <a class="carousel-item" id="Bocchialini"><img src="img/logoBC.png"></a>
+                </div>
+            </div>
+			<div id="tabDidattica" class="col s12"></div>
+			<div id="tabStoria" class="col s12"></div>
+            
+        </section>
         
         <!-- SCRIPT JS -->
         <script type="text/javascript" src="cordova.js"></script>

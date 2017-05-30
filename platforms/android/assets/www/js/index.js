@@ -25,9 +25,47 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-/****************************/
 
-$(document).ready(function () {
+/*$(document).ready(function () {
     'use strict';
     app.initialize();
+	$.ajax({ 
+		$("#tabOrti").load("orti.html #orti", function() {
+			$.getScript("js/orti.js");
+		});
+		$("#tabDidattica").load("didattica.html #didattica", function () {
+			$.getScript("js/didattica.js");
+		});
+		$("#tabStoria").load("storia.html #storia", function () {
+			$.getScript("js/storia.js");
+		});
+    });
+});*/
+
+$(document).ready(function(){
+    $('.carousel').carousel();
 });
+
+$("#Maria_Luigia").click(function(){
+    $("#tabOrti").load("login.html #sezione_login", function () {
+        $.getScript("js/login.js");
+    });
+});
+
+$('ul.tabs.tabs-transparent li.tab').on('click', function(){ 
+
+    var activeName = $(this).attr("data-name");
+    var srcImg = $(this).parent().find(".active img").attr("src");
+    srcImg = srcImg.replace("white", "dark");
+    $(this).parent().find(".active img").attr("src", srcImg);
+    
+    srcImg = $(this).find("img").attr("src");
+    srcImg = srcImg.replace("dark", "white");
+    $(this).find("img").attr("src", srcImg);
+    $("#lblNav").html(activeName);
+    
+});
+
+$('img#imgCollapse.nav-button').attr("style", "display: none !important");
+$('ul.tabs.tabs-transparent').attr('style', 'display: flex !important');
+$('nav.nav-extended.under-nav').attr('style', 'display: block !important');
