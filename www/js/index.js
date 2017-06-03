@@ -1,21 +1,16 @@
-/*global $, jQuery, alert, console*/
-
-/* OGGETTO APP */
+// Ogetto app
 var app = {
-    // Application Constructor
+    //wsUrl: "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php",
+    // Costruttore
     initialize: function () {
         'use strict';
         this.bindEvents();
     },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         'use strict';
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
-    // deviceready Event Handler
+    // Ascoltatore "DeviceReady" per verificare che le api del dispositivo sono state caricate e pronte ad essere usate
     onDeviceReady: function () {
         'use strict';
         app.receivedEvent('deviceready');
@@ -42,16 +37,50 @@ var app = {
     });
 });*/
 
+// Funzione per il caricamento del carosello nel tab Orti
+function getCarousel() {
+    'use strict';
+    
+    $.ajax({
+        type: "POST",
+        url: "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?",
+        crossDomain: true,
+        data: {
+            service: "getCarousel"
+        },
+        dataType: "json",
+        success: function (resp) {
+            if (resp.response === "1") {
+                $.each(resp, function (key, value) {
+                    if (key !== "response") {
+                        tempLocali += "<div class='carousel'><a class='carousel-item' data-name='" + value.nome + "'<img src='" + value.percorsoimmagine + "' /></a>";
+                    }
+                    tempLocali += "</div>";
+                });
+                $("#id_div_orti").html(tempLocali);
+                //Gestione del click sull'immagine del carosello (passo il nome della scuola data-name)
+                $("a.carousel-item").click(function () {
+                    nomeScuola = $(this).attr("data-name");
+                    $("#tabOrti").load("login.html #login", function () {
+                        $.getScript("js/login.js");
+                    });
+                });
+            } else {
+                $("#id_div_orti").html(resp.error);
+            }
+        },
+        error: function (xhr, status, error) {
+            window.alert("Connessione fallita");
+        }
+    });
+}
+
+// Istanza del carosello di immagini della libreria Materializecss
 $(document).ready(function(){
     $('.carousel').carousel();
 });
 
-$("#Maria_Luigia").click(function(){
-    $("#tabOrti").load("login.html #sezione_login", function () {
-        $.getScript("js/login.js");
-    });
-});
-
+// Funzione per far diventare bianca l'icona del tab attivo
 $('ul.tabs.tabs-transparent li.tab').on('click', function(){ 
 
     var activeName = $(this).attr("data-name");
@@ -65,6 +94,8 @@ $('ul.tabs.tabs-transparent li.tab').on('click', function(){
     $("#lblNav").html(activeName);
     
 });
+
+getCarousel();
 
 $('img#imgCollapse.nav-button').attr("style", "display: none !important");
 $('ul.tabs.tabs-transparent').attr('style', 'display: flex !important');
