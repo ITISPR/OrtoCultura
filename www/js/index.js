@@ -1,3 +1,5 @@
+/*global $, console*/
+
 // Ogetto app
 var app = {
     //wsUrl: "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php",
@@ -20,6 +22,30 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function asyncPrintJson(parsedJson, firstTag) {
+    'use strict';
+    var i = 0,
+        j = 0;
+
+    function printJson(respJson, tag) {
+        $(tag).append("<ul data-ul=" + i + " class='collapsible' data-collapsible='accordion'></ul>");
+        $.each(respJson, function (key, value) {
+            if (value !== null && typeof value === 'object') {
+                j += 1;
+                $("ul[data-ul=" + i + "]").append("<li data-li='" + j + "'><b>KEY:</b> " + key + "</li>");
+                setTimeout(printJson, 0, value, "li[data-li=" + j + "]");
+            } else {
+                $("ul[data-ul=" + i + "]").append('<li><div onclick="getCategories(this)" class="collapsible-header families"><span>' + value.nome + '</span></div><div class="collapsible-body"></div></li>');
+            }
+
+        });
+        i += 1;
+    }
+    
+    $(firstTag).empty();
+    setTimeout(printJson, 0, parsedJson, firstTag);
+}
 
 // Funzione per il caricamento del carosello nel tab Orti
 function getCarousel() {
@@ -44,14 +70,15 @@ function getFamilies() {
     'use strict'; //il codice JS deve essere eseguito in modalità strict 
     var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
     $.getJSON(url, 'service=getFamilies', function (resp) {
-        $("#id_div_didattica").empty();
+        /*$("#id_div_didattica").empty();
         var strCategories = '<ul class="collapsible" data-collapsible="accordion">';
         
         $.each(resp, function (keyFamiglia, famiglia) {
             strCategories += '<li><div onclick="getCategories(this)" class="collapsible-header families"><span>' + famiglia.nome + '</span></div><div class="collapsible-body"></div></li>';
         });
         
-        $("#id_div_didattica").append(strCategories);
+        $("#id_div_didattica").append(strCategories);*/
+        asyncPrintJson(resp, "#id_div_didattica");
     });
 }
 
@@ -65,25 +92,26 @@ function getCategories(divClicked) {
         $.each(resp, function (keyCategoria, categoria) {
             var i;
             strCategories += '<li><div class="collapsible-header categories"><img src="' + categoria.img + '" class="icon_categories"><span>' + categoria.nome + '</span></div><div class="collapsible-body"></div></li>';
-        }); 
+        });
 
         $(divClicked).parent().find(".collapsible-body").html(strCategories);
         $('.collapsible').collapsible();
     });
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
+    'use strict';
     
-    $('.collapsible').collapsible(); 
+    $('.collapsible').collapsible();
     $('.carousel').carousel();
     
     // Funzione per far diventare bianca l'icona del tab attivo
-    $('ul.tabs.tabs-transparent li.tab').on('click', function(){ 
-        var activeName = $(this).attr("data-name");
-        var srcImg = $(this).parent().find(".active img").attr("src");
+    $('ul.tabs.tabs-transparent li.tab').on('click', function () {
+        var activeName = $(this).attr("data-name"),
+            srcImg = $(this).parent().find(".active img").attr("src");
+        
         srcImg = srcImg.replace("white", "dark");
         $(this).parent().find(".active img").attr("src", srcImg);
-
         srcImg = $(this).find("img").attr("src");
         srcImg = srcImg.replace("dark", "white");
         $(this).find("img").attr("src", srcImg);
