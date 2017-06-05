@@ -135,7 +135,6 @@ Index
 }
 
 #id_div_orti {
-    margin: 40px;
 }
 
 #id_div_didattica {
@@ -159,6 +158,16 @@ Login
     margin: auto;
 }
 
+.icon_categories {
+    vertical-align: middle !important;
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.collapsible-header > span {
+    margin-left: 1em;
+    text-transform: capitalize;
+}
 
 /*
 Orto

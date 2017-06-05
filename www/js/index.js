@@ -21,82 +21,81 @@ var app = {
     }
 };
 
-/*$(document).ready(function () {
-    'use strict';
-    app.initialize();
-	$.ajax({ 
-		$("#tabOrti").load("orti.html #orti", function() {
-			$.getScript("js/orti.js");
-		});
-		$("#tabDidattica").load("didattica.html #didattica", function () {
-			$.getScript("js/didattica.js");
-		});
-		$("#tabStoria").load("storia.html #storia", function () {
-			$.getScript("js/storia.js");
-		});
-    });
-});*/
-
 // Funzione per il caricamento del carosello nel tab Orti
 function getCarousel() {
     'use strict';
     
-    $.ajax({
-        type: "POST",
-        url: "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?",
-        crossDomain: true,
-        data: {
-            service: "getCarousel"
-        },
-        dataType: "json",
-        success: function (resp) {
-            if (resp.response === "1") {
-                $.each(resp, function (key, value) {
-                    if (key !== "response") {
-                        tempLocali += "<div class='carousel'><a class='carousel-item' data-name='" + value.nome + "'<img src='" + value.percorsoimmagine + "' /></a>";
-                    }
-                    tempLocali += "</div>";
-                });
-                $("#id_div_orti").html(tempLocali);
-                //Gestione del click sull'immagine del carosello (passo il nome della scuola data-name)
-                $("a.carousel-item").click(function () {
-                    nomeScuola = $(this).attr("data-name");
-                    $("#tabOrti").load("login.html #login", function () {
-                        $.getScript("js/login.js");
-                    });
-                });
-            } else {
-                $("#id_div_orti").html(resp.error);
-            }
-        },
-        error: function (xhr, status, error) {
-            window.alert("Connessione fallita");
-        }
+    var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
+    $.getJSON(url, 'service=getCarousel', function (resp) {
+        $("#id_div_orti").empty();
+        var strCarousel = "<div class='carousel'>";
+        
+        $.each(resp, function (keyCarousel, scuola) {
+            strCarousel += "<a class='carousel-item' data-name='" + scuola.nome + "'<img src='" + scuola.img + "' /></a>";
+        });
+        
+        strCarousel += "</div>";
+        
+        $("#id_div_orti").append(strCarousel);
     });
 }
 
-// Istanza del carosello di immagini della libreria Materializecss
+function getFamilies() {
+    'use strict'; //il codice JS deve essere eseguito in modalità strict 
+    var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
+    $.getJSON(url, 'service=getFamilies', function (resp) {
+        $("#id_div_didattica").empty();
+        var strCategories = '<ul class="collapsible" data-collapsible="accordion">';
+        
+        $.each(resp, function (keyFamiglia, famiglia) {
+            strCategories += '<li><div onclick="getCategories(this)" class="collapsible-header families"><span>' + famiglia.nome + '</span></div><div class="collapsible-body"></div></li>';
+        });
+        
+        $("#id_div_didattica").append(strCategories);
+    });
+}
+
+function getCategories(divClicked) {
+    'use strict';
+    var url = "http://web.itis.pr.it:8080/ortocultura/wsSchedeOrtaggi/wsSchedeOrtaggi.php?callback=?";
+    
+    $.getJSON(url, 'service=getCategories&famiglia=' + $(divClicked).parent().find(".collapsible-header span").html(), function (resp) {
+        var strCategories = '<ul class="collapsible" data-collapsible="accordion">';
+
+        $.each(resp, function (keyCategoria, categoria) {
+            var i;
+            strCategories += '<li><div class="collapsible-header categories"><img src="' + categoria.img + '" class="icon_categories"><span>' + categoria.nome + '</span></div><div class="collapsible-body"></div></li>';
+        }); 
+
+        $(divClicked).parent().find(".collapsible-body").html(strCategories);
+        $('.collapsible').collapsible();
+    });
+}
+
 $(document).ready(function(){
+    
+    $('.collapsible').collapsible(); 
     $('.carousel').carousel();
+    
+    // Funzione per far diventare bianca l'icona del tab attivo
+    $('ul.tabs.tabs-transparent li.tab').on('click', function(){ 
+        var activeName = $(this).attr("data-name");
+        var srcImg = $(this).parent().find(".active img").attr("src");
+        srcImg = srcImg.replace("white", "dark");
+        $(this).parent().find(".active img").attr("src", srcImg);
+
+        srcImg = $(this).find("img").attr("src");
+        srcImg = srcImg.replace("dark", "white");
+        $(this).find("img").attr("src", srcImg);
+        $("#lblNav").html(activeName);
+    });
+
+    getCarousel();
+    getFamilies();
+
+    $('img#imgCollapse.nav-button').attr("style", "display: none !important");
+    $('ul.tabs.tabs-transparent').attr('style', 'display: flex !important');
+    $('nav.nav-extended.under-nav').attr('style', 'display: block !important');
 });
 
-// Funzione per far diventare bianca l'icona del tab attivo
-$('ul.tabs.tabs-transparent li.tab').on('click', function(){ 
 
-    var activeName = $(this).attr("data-name");
-    var srcImg = $(this).parent().find(".active img").attr("src");
-    srcImg = srcImg.replace("white", "dark");
-    $(this).parent().find(".active img").attr("src", srcImg);
-    
-    srcImg = $(this).find("img").attr("src");
-    srcImg = srcImg.replace("dark", "white");
-    $(this).find("img").attr("src", srcImg);
-    $("#lblNav").html(activeName);
-    
-});
-
-getCarousel();
-
-$('img#imgCollapse.nav-button').attr("style", "display: none !important");
-$('ul.tabs.tabs-transparent').attr('style', 'display: flex !important');
-$('nav.nav-extended.under-nav').attr('style', 'display: block !important');
