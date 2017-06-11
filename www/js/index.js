@@ -19,7 +19,8 @@ var app = {
         'use strict';
         console.log('Received Event: ' + id);
     }
-};
+},
+ortaggioNome, ortaggioDescr, ortaggioImg, ortaggioFamiglia;
 
 // Funzione per il caricamento del carosello nel tab Orti
 function getCarousel() {
@@ -37,6 +38,7 @@ function getCarousel() {
         strCarousel += "</div>";
         
         $("#id_div_orti").append(strCarousel);
+        $('.carousel').carousel();
     });
 }
 
@@ -64,18 +66,29 @@ function getCategories(divClicked) {
 
         $.each(resp, function (keyCategoria, categoria) {
             var i;
-            strCategories += '<li><div class="collapsible-header categories"><img src="' + categoria.img + '" class="icon_categories"><span>' + categoria.nome + '</span></div><div class="collapsible-body"></div></li>';
+            // Aggiunto due span invisibili (display none) per contenere la descrizione e la famiglia scientifica
+            strCategories += '<li><div class="collapsible-header categories"><img src="' + categoria.img + '" class="icon_categories"><span id="nome">' + categoria.nome + '</span><span id="descrizione" style="display:none">' + categoria.descrizione + '</span><span id="famiglia" style="display:none">' + categoria.famigliaScientifica + '</span></div><div class="collapsible-body"></div></li>';
         }); 
 
         $(divClicked).parent().find(".collapsible-body").html(strCategories);
         $('.collapsible').collapsible();
+        
+        // Ascoltatore sul click dell'ortaggio nella list view
+        $(".collapsible-header.categories").click(function () {
+            ortaggioNome = $(this).find("#nome") .text();
+            ortaggioImg = $(this).find('img').attr('src');
+            ortaggioDescr = $(this).find("#descrizione").text();
+            ortaggioFamiglia = $(this).find("#famiglia").text();
+            $("#tabDidattica").load("ortaggio.html #sezione_ortaggio", function () {
+                $.getScript("js/ortaggio.js");
+            });
+        });
     });
 }
 
 $(document).ready(function(){
     
     $('.collapsible').collapsible(); 
-    $('.carousel').carousel();
     
     // Funzione per far diventare bianca l'icona del tab attivo
     $('ul.tabs.tabs-transparent li.tab').on('click', function(){ 

@@ -87,6 +87,7 @@ Index
     box-shadow: none !important;
     display: block;
     height: 56px !important;
+    padding-top: 3px !important;
 }
 
 .under-nav {
@@ -94,6 +95,7 @@ Index
     line-height: 20px !important;
     text-align: center !important;
     box-shadow: none !important;
+    padding-top: 3px !important;
 }
 
 .nav-icon {
@@ -138,7 +140,7 @@ Index
 }
 
 #id_div_didattica {
-    margin: 40px;
+    margin: 20px;
 }
 
 
@@ -184,4 +186,30 @@ Orto
 
 #sezione_orto {
     margin: 30px;
+}
+
+
+/*
+Ortaggio
+*/
+
+#sezione_ortaggio {
+    margin: 20px;
+}
+
+.titoloOrtaggio {
+    text-align: center;
+    color: #008744;
+}
+
+.dettaglioOrtaggio {
+    color: #008744;
+    margin-right: 8px;
+}
+
+.imgOrtaggio {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    display: block;
 }
