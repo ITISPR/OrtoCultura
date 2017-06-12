@@ -20,7 +20,7 @@ var app = {
         console.log('Received Event: ' + id);
     }
 },
-ortaggioNome, ortaggioDescr, ortaggioImg, ortaggioFamiglia;
+ortaggioNome, ortaggioDescr, ortaggioFamiglia;
 
 // Funzione per il caricamento del carosello nel tab Orti
 function getCarousel() {
@@ -76,7 +76,6 @@ function getCategories(divClicked) {
         // Ascoltatore sul click dell'ortaggio nella list view
         $(".collapsible-header.categories").click(function () {
             ortaggioNome = $(this).find("#nome") .text();
-            ortaggioImg = $(this).find('img').attr('src');
             ortaggioDescr = $(this).find("#descrizione").text();
             ortaggioFamiglia = $(this).find("#famiglia").text();
             $("#tabDidattica").load("ortaggio.html #sezione_ortaggio", function () {

@@ -195,6 +195,7 @@ Ortaggio
 
 #sezione_ortaggio {
     margin: 20px;
+    font-size: 18px;
 }
 
 .titoloOrtaggio {
@@ -204,12 +205,19 @@ Ortaggio
 
 .dettaglioOrtaggio {
     color: #008744;
-    margin-right: 8px;
 }
 
 .imgOrtaggio {
-    width: 40px;
-    height: 40px;
+    width: 120px;
+    height: 120px;
     margin: auto;
     display: block;
+    border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+.testoOrtaggio {
+    font-size: 16px;
+    color: #5d5d5d;
 }
