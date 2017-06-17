@@ -10,6 +10,9 @@ function getInformations() {
     $("#descrizioneOrtaggio").html(ortaggioDescr);
 }
 
+$("#imgCollapse.nav-button").click( function() {
+});
+
 $(document).ready(function(){
     $('.materialboxed').materialbox();
 });
